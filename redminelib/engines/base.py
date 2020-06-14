@@ -106,7 +106,7 @@ class BaseEngine(object):
 
                 for num in range(limit - self.chunk, 0, -self.chunk):
                     offset += self.chunk
-                    limit -= self.chunk
+                    limit = self.chunk
                     bulk_params.append(dict(params, offset=offset, limit=limit))
 
                 # If we need to make just one more request, there's no point in async
